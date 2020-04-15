@@ -165,10 +165,11 @@ BLYNK_WRITE(V1) {
         _nota3 = i.toFloat();
         for (int i = 0; i < INDEX; i++) {
         if (_cc == baseDatos[i].cc) {
+          baseDatos[i].modificarNotas(_nota1, _nota2, _nota3);
+          //baseDatos[i].nota1 = _nota1; Esto ya no vá, se invoca el metodo modificar notas... 
+          //baseDatos[i].nota2 = _nota2; ya lo probe y funciona OK...!
+          //baseDatos[i].nota3 = _nota3;
           String datos = baseDatos[i].retornarDatos();
-          baseDatos[i].nota1 = _nota1;
-          baseDatos[i].nota2 = _nota2;
-          baseDatos[i].nota3 = _nota3;
           terminal.println(datos);
           terminal.flush();
           reset();

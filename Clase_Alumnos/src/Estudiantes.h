@@ -9,7 +9,7 @@ public:
     //Estudiantes(int, String, String, String, int, float, float, float);
     void registrarEstudiante(int, String, String, String, int, float, float, float);
     String retornarDatos();
-    String modificarNotas(float, float, float);
+    void modificarNotas(float, float, float);
     void consultarNota();
 };
 
@@ -44,14 +44,7 @@ String Estudiantes::retornarDatos() {
     return String("- " + apellido + " " + nombre + " Nota Final: "  + notaFinal);
 }
 
-String Estudiantes::modificarNotas(float _nota1_, float _nota2_, float _nota3_) {
-    String mensaje;
-    if (_nota1_ > nota1)
-    {
-        mensaje = "No tienes saldo suficiente";
-    }
-    return mensaje;
-    
+void Estudiantes::modificarNotas(float _nota1_, float _nota2_, float _nota3_) {
     nota1 = _nota1_;
     nota2 = _nota2_;
     nota3 = _nota3_;
